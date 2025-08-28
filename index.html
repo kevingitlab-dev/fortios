@@ -39,7 +39,7 @@
             border: 1px solid #334155; /* slate-700 */
             padding: 1rem;
             border-radius: 0.5rem;
-            overflow-x: auto;
+            overflow-x: auto; /* Fix: Allow horizontal scrolling */
             color: #cbd5e1;
         }
         .cli-code {
@@ -49,7 +49,7 @@
             white-space: pre;
             padding: 1rem;
             border-radius: 0.5rem;
-            overflow-x: auto;
+            overflow-x: auto; /* Fix: Allow horizontal scrolling */
         }
         .nav-link {
             transition: color 0.2s;
@@ -164,7 +164,11 @@
                     <div class="p-6">
                         <div id="site-to-site" class="tab-content">
                             <h4 class="text-xl font-semibold mb-2 text-white">Site-to-Site</h4>
-                            <p class="mb-4 text-slate-300">Easily establish site-to-site connections between offices with a simple static key architecture. Its excellent NAT traversal capabilities solve many of the connection barriers of traditional VPNs. It is ideal for companies needing to quickly establish branch office connections or create VPC-to-VPC connections in a multi-cloud architecture.</p>
+                            <p class="mb-4 text-slate-300"><strong>Traditional Approach:</strong> IPsec VPNs are complex to deploy and difficult to manage, especially in dynamic IP or NAT environments.
+<br><br><strong>WireGuard Approach:</strong> A simple static key architecture allows for easy site-to-site connections. Its superior NAT traversal capability resolves many common connectivity barriers.
+<br><br><strong>Application:</strong> Ideal for companies needing to quickly establish branch office connections or create VPC-to-VPC connections in multi-cloud architectures.
+                            </p>
+                            <h5 class="font-semibold mt-6 mb-2">Topology</h5>
                             <div class="topology mb-4">
 +----------------+        +----------------+        +------------------+
 |      Office A  |        |      Internet  |        |      Office B    |
@@ -172,19 +176,39 @@
 |   192.168.1.0/24|        |                |        |   192.168.2.0/24 |
 +----------------+        +----------------+        +------------------+
                             </div>
-                            <h5 class="font-semibold mt-6 mb-2">FortiGate A Configuration Example (CLI)</h5>
+                            <h5 class="font-semibold mt-6 mb-2">Configuration Example (CLI)</h5>
+                            <h6 class="font-medium text-slate-400 mb-1">FortiGate A</h6>
                             <div class="cli-code">config vpn wireguard
     edit "wg-site-to-site"
-        set interface "port1"
-        set local-gw 10.0.0.1
+        set interface "port1"  // External Interface
+        set local-gw 10.0.0.1  // Internal WireGuard Virtual IP
         set local-port 51820
-        set local-private-key "..."
+        set local-private-key "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
         config peer
             edit "office-b"
-                set peer-gw 10.0.0.2
+                set peer-gw 10.0.0.2  // Office B's WireGuard Virtual IP
                 set endpoint "Office B Public IP"
-                set public-key "..."
-                set allowed-ips "192.168.2.0/24"
+                set endpoint-port 51820
+                set public-key "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+                set allowed-ips "192.168.2.0/24" // Allowed subnet for routing
+            next
+        end
+    next
+end</div>
+                            <h6 class="font-medium text-slate-400 mt-4 mb-1">FortiGate B</h6>
+                            <div class="cli-code">config vpn wireguard
+    edit "wg-site-to-site"
+        set interface "port1"  // External Interface
+        set local-gw 10.0.0.2  // Internal WireGuard Virtual IP
+        set local-port 51820
+        set local-private-key "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+        config peer
+            edit "office-a"
+                set peer-gw 10.0.0.1  // Office A's WireGuard Virtual IP
+                set endpoint "Office A Public IP"
+                set endpoint-port 51820
+                set public-key "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+                set allowed-ips "192.168.1.0/24" // Allowed subnet for routing
             next
         end
     next
@@ -192,7 +216,11 @@ end</div>
                         </div>
                         <div id="site-to-client" class="tab-content" style="display: none;">
                             <h4 class="text-xl font-semibold mb-2 text-white">Remote Access (Site-to-Client)</h4>
-                            <p class="mb-4 text-slate-300">Clients can quickly deploy by scanning a QR code or importing a configuration file, without complex setup. It is especially suitable for remote workers, DevOps engineers, and mobile users. Its low power consumption also makes it an ideal choice for mobile devices.</p>
+                            <p class="mb-4 text-slate-300"><strong>Traditional Approach:</strong> SSL VPNs require user accounts, certificates, and proprietary client software, increasing management and support overhead.
+<br><br><strong>WireGuard Approach:</strong> Clients can be deployed quickly by scanning a QR code or importing a configuration file, eliminating complex setup.
+<br><br><strong>Application:</strong> Ideal for remote workers, DevOps engineers, and mobile users. Its low power consumption makes it a perfect choice for mobile devices.
+                            </p>
+                            <h5 class="font-semibold mt-6 mb-2">Topology</h5>
                             <div class="topology mb-4">
 +------------------+        +-----------------+
 |   Headquarters   |        |                 |
@@ -203,66 +231,178 @@ end</div>
         |       +------------+ +------------+ +------------+
         |       | Remote User| | Remote User| | Remote User|
         |       | (Laptop A) | | (Laptop B) | | (Mobile C) |
+        |       | 10.0.0.2   | | 10.0.0.3   | | 10.0.0.4   |
         |       +------------+ +------------+ +------------+
                             </div>
-                            <h5 class="font-semibold mt-6 mb-2">FortiGate HQ Configuration Example (CLI)</h5>
+                            <h5 class="font-semibold mt-6 mb-2">Configuration Example (CLI)</h5>
+                            <h6 class="font-medium text-slate-400 mb-1">FortiGate HQ</h6>
                             <div class="cli-code">config vpn wireguard
     edit "wg-remote-access"
-        set interface "port1"
-        set local-gw 10.0.0.1
+        set interface "port1"  // External Interface
+        set local-gw 10.0.0.1  // Internal WireGuard Virtual IP
         set local-port 51820
-        set local-private-key "..."
+        set local-private-key "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
         config peer
             edit "remote-user-a"
-                set peer-gw 10.0.0.2
-                set public-key "..."
-                set allowed-ips "10.0.0.2/32"
+                set peer-gw 10.0.0.2  // User's WireGuard Virtual IP
+                set public-key "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+                set allowed-ips "10.0.0.2/32" // Only allow a single IP
             next
             edit "remote-user-b"
                 set peer-gw 10.0.0.3
-                set public-key "..."
+                set public-key "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
                 set allowed-ips "10.0.0.3/32"
+            next
+            edit "remote-user-c"
+                set peer-gw 10.0.0.4
+                set public-key "cccccccccccccccccccccccccccccccccccccccccccc"
+                set allowed-ips "10.0.0.4/32"
             next
         end
     next
 end</div>
+                            <h6 class="font-medium text-slate-400 mt-4 mb-1">Remote Client Configurations</h6>
+                            <div class="cli-code"><strong>Laptop A</strong>
+[Interface]
+PrivateKey = aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Address = 10.0.0.2/24
+
+[Peer]
+PublicKey = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+Endpoint = "Headquarters FortiGate Public IP":51820
+AllowedIPs = 192.168.1.0/24 // Allowed internal network subnet
+PersistentKeepalive = 25
+
+<strong>Laptop B</strong>
+[Interface]
+PrivateKey = bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+Address = 10.0.0.3/24
+
+[Peer]
+PublicKey = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+Endpoint = "Headquarters FortiGate Public IP":51820
+AllowedIPs = 192.168.1.0/24
+PersistentKeepalive = 25
+
+<strong>Mobile C</strong>
+[Interface]
+PrivateKey = cccccccccccccccccccccccccccccccccccccccccccc
+Address = 10.0.0.4/24
+
+[Peer]
+PublicKey = zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+Endpoint = "Headquarters FortiGate Public IP":51820
+AllowedIPs = 192.168.1.0/24
+PersistentKeepalive = 25</div>
                         </div>
                         <div id="hub-spoke" class="tab-content" style="display: none;">
                             <h4 class="text-xl font-semibold mb-2 text-white">Hub-and-Spoke with OSPF Dynamic Routing</h4>
-                            <p class="mb-4 text-slate-300">By combining with OSPF dynamic routing, network routing information can be exchanged automatically, eliminating the need for complex and time-consuming static route configurations. This makes the network more scalable and flexible, which is very suitable for enterprises with multiple branches or a distributed network architecture.</p>
+                            <p class="mb-4 text-slate-300"><strong>Traditional Approach:</strong> Requires manual, static route configuration on all devices, making the network difficult to scale and maintain.
+<br><br><strong>WireGuard with OSPF Approach:</strong> Automates the exchange of routing information, eliminating complex and time-consuming static route configurations. This makes the network more scalable and resilient.
+<br><br><strong>Application:</strong> Ideal for enterprises with multiple branch offices or a dispersed network architecture that requires dynamic and automated routing.</p>
+                            <h5 class="font-semibold mt-6 mb-2">Topology</h5>
                             <div class="topology mb-4">
                   +----------------------+
                   |      Headquarters    |
                   |     (FortiGate HUB)  |
+                  |  192.168.10.0/24     |
+                  |  OSPF Router ID: 1.1.1.1  |
                   +----------+-----------+
-                             | WireGuard Tunnel
+                             | WireGuard Tunnel (10.0.0.1/24)
+                             | OSPF Area 0.0.0.0
          +-------------------+--------------------+
          |                   |                    |
 +--------+--------+   +------+--------+   +--------+--------+
 | Branch Office A |   | Branch Office B |   | Branch Office C |
 | (FortiGate A)   |   | (FortiGate B)   |   | (FortiGate C)   |
+| 192.168.20.0/24 |   | 192.168.30.0/24 |   | 192.168.40.0/24 |
+| OSPF Router ID: |   | OSPF Router ID: |   | OSPF Router ID: |
+| 2.2.2.2         |   | 3.3.3.3         |   | 4.4.4.4         |
 +-----------------+   +-----------------+   +-----------------+
                             </div>
-                            <h5 class="font-semibold mt-6 mb-2">FortiGate HUB Configuration Example (CLI)</h5>
+                            <h5 class="font-semibold mt-6 mb-2">Configuration Example (CLI)</h5>
+                            <h6 class="font-medium text-slate-400 mb-1">FortiGate HUB (10.0.0.1)</h6>
                             <div class="cli-code">config vpn wireguard
     edit "wg-hub"
-        set local-gw 10.0.0.1/24
-        ...
+        set interface "wan1"  // External Interface
+        set local-gw 10.0.0.1/24  // WireGuard Virtual IP on Hub
+        set local-port 51820
+        set local-private-key "hub-private-key"
         config peer
             edit "spoke-a"
-                set peer-gw 10.0.0.2
-                set allowed-ips "10.0.0.2/32"
+                set peer-gw 10.0.0.2  // Spoke A's WireGuard IP
+                set endpoint "Spoke A Public IP"
+                set endpoint-port 51820
+                set public-key "spoke-a-public-key"
+                set allowed-ips "10.0.0.2/32" // Only allow the peer IP
             next
+            edit "spoke-b"
+                set peer-gw 10.0.0.3  // Spoke B's WireGuard IP
+                set endpoint "Spoke B Public IP"
+                set endpoint-port 51820
+                set public-key "spoke-b-public-key"
+                set allowed-ips "10.0.0.3/32"
+            next
+            // Add more peers for each spoke
         end
     next
 end
 
 config router ospf
     set router-id 1.1.1.1
+    config area
+        edit 0.0.0.0
+        next
+    end
     config network
         edit 1
-            set prefix 10.0.0.0 255.255.255.0
+            set prefix 10.0.0.0 255.255.255.0  // WireGuard tunnel network
         next
+        edit 2
+            set prefix 192.168.10.0 255.255.255.0  // Hub's LAN network
+        next
+    end
+    config redistribute "connected"
+        set status enable
+        set protocol connected
+    end
+end</div>
+                            <h6 class="font-medium text-slate-400 mt-4 mb-1">FortiGate Spoke A (10.0.0.2)</h6>
+                            <div class="cli-code">config vpn wireguard
+    edit "wg-spoke"
+        set interface "wan1"  // External Interface
+        set local-gw 10.0.0.2/24  // WireGuard Virtual IP on Spoke A
+        set local-port 51820
+        set local-private-key "spoke-a-private-key"
+        config peer
+            edit "hub"
+                set peer-gw 10.0.0.1  // Hub's WireGuard IP
+                set endpoint "Hub Public IP"
+                set endpoint-port 51820
+                set public-key "hub-public-key"
+                set allowed-ips "0.0.0.0/0" // Allow all traffic from the hub
+            next
+        end
+    next
+end
+
+config router ospf
+    set router-id 2.2.2.2
+    config area
+        edit 0.0.0.0
+        next
+    end
+    config network
+        edit 1
+            set prefix 10.0.0.0 255.255.255.0  // WireGuard tunnel network
+        next
+        edit 2
+            set prefix 192.168.20.0 255.255.255.0  // Spoke A's LAN network
+        next
+    end
+    config redistribute "connected"
+        set status enable
+        set protocol connected
     end
 end</div>
                         </div>
