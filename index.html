@@ -173,7 +173,7 @@
 +----------------+        +----------------+        +------------------+
 |      Office A  |        |      Internet  |        |      Office B    |
 | (FortiGate A)  |--------|       Cloud    |--------|   (FortiGate B)  |
-|   192.168.1.0/24|        |                |        |   192.168.2.0/24 |
+|  192.168.1.0/24|        |                |        |   192.168.2.0/24 |
 +----------------+        +----------------+        +------------------+
                             </div>
                             <h5 class="font-semibold mt-6 mb-2">Configuration Example (CLI)</h5>
@@ -228,11 +228,16 @@ end</div>
 |  192.168.1.0/24  |        |                 |
 +------------------+        +-----------------+
         |                    /      |     \
+        |                   /       |      \
+        |                  /        |       \
         |       +------------+ +------------+ +------------+
         |       | Remote User| | Remote User| | Remote User|
         |       | (Laptop A) | | (Laptop B) | | (Mobile C) |
         |       | 10.0.0.2   | | 10.0.0.3   | | 10.0.0.4   |
         |       +------------+ +------------+ +------------+
+        |
+        |---- LAN Zone
+
                             </div>
                             <h5 class="font-semibold mt-6 mb-2">Configuration Example (CLI)</h5>
                             <h6 class="font-medium text-slate-400 mb-1">FortiGate HQ</h6>
@@ -302,17 +307,17 @@ PersistentKeepalive = 25</div>
 <br><br><strong>Application:</strong> Ideal for enterprises with multiple branch offices or a dispersed network architecture that requires dynamic and automated routing.</p>
                             <h5 class="font-semibold mt-6 mb-2">Topology</h5>
                             <div class="topology mb-4">
-                  +----------------------+
-                  |      Headquarters    |
-                  |     (FortiGate HUB)  |
-                  |  192.168.10.0/24     |
+                  +---------------------------+
+                  |      Headquarters         |
+                  |     (FortiGate HUB)       |
+                  |     192.168.10.0/24       |
                   |  OSPF Router ID: 1.1.1.1  |
-                  +----------+-----------+
+                  +----------+----------------+
                              | WireGuard Tunnel (10.0.0.1/24)
                              | OSPF Area 0.0.0.0
          +-------------------+--------------------+
          |                   |                    |
-+--------+--------+   +------+--------+   +--------+--------+
++--------+--------+   +------+----------+   +--------+--------+
 | Branch Office A |   | Branch Office B |   | Branch Office C |
 | (FortiGate A)   |   | (FortiGate B)   |   | (FortiGate C)   |
 | 192.168.20.0/24 |   | 192.168.30.0/24 |   | 192.168.40.0/24 |
