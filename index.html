@@ -430,7 +430,7 @@ end</div>
                             <span class="accordion-icon transform transition-transform duration-200 text-sky-500">+</span>
                         </button>
                         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness1.body"><strong>Solution:</strong> Integrate with <strong class="text-sky-500">FortiAuthenticator</strong> to enable multi-factor authentication (MFA) or other enterprise authentication mechanisms.</span></p>
+                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness1.body"><strong>Solution:</strong> Integrate with <strong class='text-sky-500'>FortiAuthenticator</strong> to enable multi-factor authentication (MFA) or other enterprise authentication mechanisms.</span></p>
                         </div>
                     </div>
                     <div class="accordion-item bg-slate-800 rounded-lg shadow-lg">
@@ -439,7 +439,7 @@ end</div>
                              <span class="accordion-icon transform transition-transform duration-200 text-sky-500">+</span>
                         </button>
                         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness2.body"><strong>Solution:</strong> Consider future support for WireGuard based on the <strong class="text-sky-500">QUIC</strong> protocol to enhance its traversal capabilities.</span></p>
+                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness2.body"><strong>Solution:</strong> Consider future support for WireGuard based on the <strong class='text-sky-500'>QUIC</strong> protocol to enhance its traversal capabilities.</span></p>
                         </div>
                     </div>
                     <div class="accordion-item bg-slate-800 rounded-lg shadow-lg">
@@ -448,7 +448,7 @@ end</div>
                              <span class="accordion-icon transform transition-transform duration-200 text-sky-500">+</span>
                         </button>
                         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness3.body"><strong>Solution:</strong> Extend the logging system in FortiOS to record handshake, peer status, and traffic details, and fully integrate with <strong class="text-sky-500">FortiAnalyzer</strong> for comprehensive visibility and analysis.</span></p>
+                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness3.body"><strong>Solution:</strong> Extend the logging system in FortiOS to record handshake, peer status, and traffic details, and fully integrate with <strong class='text-sky-500'>FortiAnalyzer</strong> for comprehensive visibility and analysis.</span></p>
                         </div>
                     </div>
                      <div class="accordion-item bg-slate-800 rounded-lg shadow-lg">
@@ -473,365 +473,328 @@ end</div>
                 </p>
             </section>
 
-            <section id="references" class="bg-slate-900 py-12">
+            <section id="references" class="py-12">
                 <div class="text-center mb-8">
                     <h3 class="text-2xl font-bold text-white" data-translate-key="references.title">Technical References</h3>
                 </div>
-                <div class="max-w-4xl mx-auto flex flex-wrap justify-center gap-6 text-center text-sm font-medium">
-                    <a href="https://www.wireguard.com/" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link1">WireGuard Official Website</a>
-                    <a href="https://docs.128technology.com/docs/plugin_wireguard" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link2">Juniper WireGuard Docs</a>
-                    <a href="https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link3">MikroTik WireGuard Docs</a>
-                    <a href="https://help.ui.com/hc/en-us/articles/115005445768-UniFi-Gateway-WireGuard-VPN-Server" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link4">Ubiquiti WireGuard Docs</a>
+                <div class="bg-slate-800 rounded-lg p-8 shadow-lg max-w-4xl mx-auto">
+                    <ul class="space-y-4 list-disc list-inside">
+                        <li>
+                            <a href="https://www.wireguard.com/" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link1">WireGuard Official Website</a>
+                        </li>
+                        <li>
+                            <a href="https://docs.128technology.com/docs/plugin_wireguard" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link2">Juniper WireGuard Docs</a>
+                        </li>
+                        <li>
+                            <a href="https://help.mikrotik.com/docs/spaces/ROS/pages/69664792/WireGuard" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link3">MikroTik WireGuard Docs</a>
+                        </li>
+                        <li>
+                            <a href="https://help.ui.com/hc/en-us/articles/115005445768-UniFi-Security-Gateway-USG-Introduction-to-IPsec-Site-to-Site-VPNs" target="_blank" class="text-sky-400 hover:text-white transition-colors duration-200" data-translate-key="references.link4">Ubiquiti UniFi WireGuard Docs</a>
+                        </li>
+                    </ul>
                 </div>
             </section>
+
         </div>
     </main>
 
+    <footer class="bg-slate-900 py-8 text-center text-sm text-slate-500">
+        <p data-translate-key="footer.text">&copy; 2025 Gemini. All rights reserved.</p>
+    </footer>
+
     <script>
-        // Use a single object for translations
-        const translations = {
-            'en': {
-                'meta.title': 'Proposal: Native Integration of WireGuard VPN into FortiGate',
-                'header.title': 'FortiGate & WireGuard',
-                'nav.overview': 'Overview',
-                'nav.comparison': 'Protocol Comparison',
-                'nav.use_cases': 'Use Cases',
-                'nav.analysis': 'Analysis & Weaknesses',
-                'nav.recommendation': 'Conclusion & Recommendation',
-                'nav.references': 'References',
-                'summary.title': 'Proposal: Native Integration of WireGuard VPN into FortiGate (FortiOS)',
-                'summary.author': 'Author: Gemini | Date: August 28, 2025',
-                'summary.body': 'This proposal recommends that Fortinet natively integrate the high-performance, modern WireGuard VPN protocol into its FortiGate firewall series. This move will provide modern enterprises with a superior VPN solution, especially in remote work, DevOps, and multi-cloud environments, thereby enhancing FortiOS\'s competitiveness and market appeal.',
-                'overview.title': 'What is WireGuard?',
-                'overview.subtitle': 'A next-generation VPN protocol that redefines secure connections.',
-                'overview.card1.title': 'Minimalist Design',
-                'overview.card1.body': 'With only a few thousand lines of code, it significantly reduces the attack surface and potential vulnerabilities, far fewer than IPsec\'s hundreds of thousands.',
-                'overview.card2.title': 'Modern Cryptography',
-                'overview.card2.body': 'Utilizes advanced cryptographic suites like ChaCha20, Poly1305, and Curve25519 to ensure top-tier security.',
-                'overview.card3.title': 'Seamless Roaming & NAT Traversal',
-                'overview.card3.body': 'Based on UDP, it has excellent NAT traversal capabilities, allowing connections to remain stable even when the IP changes.',
-                'overview.card4.title': 'Native Kernel Support',
-                'overview.card4.body': 'Already integrated into the Linux kernel. Since FortiOS is Linux-based, a high-performance integration is technically feasible.',
-                'comparison.title': 'Interactive VPN Protocol Comparison',
-                'comparison.subtitle': 'Click the buttons below to dynamically compare the performance of different protocols across various metrics.',
-                'comparison.btn1': 'Performance',
-                'comparison.btn2': 'Configuration Complexity',
-                'comparison.btn3': 'NAT Traversal',
-                'comparison.btn4': 'Encryption Strength',
-                'comparison.btn5': 'Client Deployment Difficulty',
-                'use_cases.title': 'Three Core Use Cases',
-                'use_cases.subtitle': 'Explore how WireGuard can revolutionize connectivity in different network environments.',
-                'use_cases.tab1': 'Site-to-Site',
-                'use_cases.tab2': 'Site-to-Client',
-                'use_cases.tab3': 'Hub-and-Spoke (OSPF)',
-                'use_cases.site_to_site.title': 'Site-to-Site',
-                'use_cases.site_to_site.text1': '<strong>Traditional Approach:</strong> IPsec VPNs are complex to deploy and difficult to manage, especially in dynamic IP or NAT environments.',
-                'use_cases.site_to_site.text2': '<strong>WireGuard Approach:</strong> A simple static key architecture allows for easy site-to-site connections. Its superior NAT traversal capability resolves many common connectivity barriers.',
-                'use_cases.site_to_site.text3': '<strong>Application:</strong> Ideal for companies needing to quickly establish branch office connections or create VPC-to-VPC connections in multi-cloud architectures.',
-                'use_cases.site_to_site.topology_title': 'Topology',
-                'use_cases.site_to_site.cli_title': 'Configuration Example (CLI)',
-                'use_cases.site_to_site.cli_fg_a': 'FortiGate A',
-                'use_cases.site_to_site.cli_fg_b': 'FortiGate B',
-                'use_cases.site_to_client.title': 'Remote Access (Site-to-Client)',
-                'use_cases.site_to_client.text1': '<strong>Traditional Approach:</strong> SSL VPNs require user accounts, certificates, and proprietary client software, increasing management and support overhead.',
-                'use_cases.site_to_client.text2': '<strong>WireGuard Approach:</strong> Clients can be deployed quickly by scanning a QR code or importing a configuration file, eliminating complex setup.',
-                'use_cases.site_to_client.text3': '<strong>Application:</strong> Ideal for remote workers, DevOps engineers, and mobile users. Its low power consumption makes it a perfect choice for mobile devices.',
-                'use_cases.site_to_client.topology_title': 'Topology',
-                'use_cases.site_to_client.cli_title': 'Configuration Example (CLI)',
-                'use_cases.site_to_client.cli_fg_hq': 'FortiGate HQ',
-                'use_cases.site_to_client.cli_clients': 'Remote Client Configurations',
-                'use_cases.hub_spoke.title': 'Hub-and-Spoke with OSPF Dynamic Routing',
-                'use_cases.hub_spoke.text1': '<strong>Traditional Approach:</strong> Requires manual, static route configuration on all devices, making the network difficult to scale and maintain.',
-                'use_cases.hub_spoke.text2': '<strong>WireGuard with OSPF Approach:</strong> Automates the exchange of routing information, eliminating complex and time-consuming static route configurations. This makes the network more scalable and resilient.',
-                'use_cases.hub_spoke.text3': '<strong>Application:</strong> Ideal for enterprises with multiple branch offices or a dispersed network architecture that requires dynamic and automated routing.',
-                'use_cases.hub_spoke.topology_title': 'Topology',
-                'use_cases.hub_spoke.cli_title': 'Configuration Example (CLI)',
-                'use_cases.hub_spoke.cli_fg_hub': 'FortiGate HUB (10.0.0.1)',
-                'use_cases.hub_spoke.cli_fg_spoke': 'FortiGate Spoke A (10.0.0.2)',
-                'analysis.title': 'Potential Weaknesses and Solutions',
-                'analysis.subtitle': 'Addressing potential challenges and proposing feasible integration solutions within the Fortinet ecosystem.',
-                'analysis.weakness1.title': 'Lack of Username/Password or MFA Support',
-                'analysis.weakness1.body': '<strong>Solution:</strong> Integrate with <strong class="text-sky-500">FortiAuthenticator</strong> to enable multi-factor authentication (MFA) or other enterprise authentication mechanisms.',
-                'analysis.weakness2.title': 'UDP-Only Transport',
-                'analysis.weakness2.body': '<strong>Solution:</strong> Consider future support for WireGuard based on the <strong class="text-sky-500">QUIC</strong> protocol to enhance its traversal capabilities.',
-                'analysis.weakness3.title': 'Insufficient Logging',
-                'analysis.weakness3.body': '<strong>Solution:</strong> Extend the logging system in FortiOS to record handshake, peer status, and traffic details, and fully integrate with <strong class="text-sky-500">FortiAnalyzer</strong> for comprehensive visibility and analysis.',
-                'analysis.weakness4.title': 'Compliance Considerations',
-                'analysis.weakness4.body': '<strong>Solution:</strong> Offer WireGuard as an optional module that can be disabled in specific regions or industries to ensure compliance with regulations such as FIPS.',
-                'recommendation.title': 'Conclusion and Final Recommendation',
-                'recommendation.body1': 'WireGuard combines high performance, ease of deployment, and robust security, perfectly aligning with the needs of modern IT environments. Natively integrating it into FortiOS will not only solve the pain points of traditional VPNs but also open up new business opportunities for Fortinet in fast-growing markets such as DevOps, IoT, and SMBs.',
-                'recommendation.body2': 'We strongly recommend that Fortinet prioritize the evaluation and native integration of WireGuard. This investment will significantly enhance FortiGate\'s flexibility and competitiveness, injecting new momentum into the company\'s long-term development.',
-                'references.title': 'Technical References',
-                'references.link1': 'WireGuard Official Website',
-                'references.link2': 'Juniper WireGuard Docs',
-                'references.link3': 'MikroTik WireGuard Docs',
-                'references.link4': 'Ubiquiti WireGuard Docs',
-            },
-            'zh': {
-                'meta.title': '提案：在FortiGate中原生整合WireGuard VPN',
-                'header.title': 'FortiGate 與 WireGuard',
-                'nav.overview': '概述',
-                'nav.comparison': '協定比較',
-                'nav.use_cases': '核心應用場景',
-                'nav.analysis': '分析與弱點',
-                'nav.recommendation': '結論與建議',
-                'nav.references': '技術參考',
-                'summary.title': '提案：在FortiGate防火牆中原生整合WireGuard VPN (FortiOS)',
-                'summary.author': '作者：Gemini | 日期：2025年8月28日',
-                'summary.body': '本提案建議 Fortinet 將高效能、現代化的 WireGuard VPN 協議原生整合到其 FortiGate 防火牆系列中。此舉將為現代企業提供卓越的 VPN 解決方案，特別是在遠端辦公、DevOps 和多雲環境中，從而增強 FortiOS 的競爭力與市場吸引力。',
-                'overview.title': '什麼是 WireGuard？',
-                'overview.subtitle': '一款重新定義安全連接的下一代 VPN 協議。',
-                'overview.card1.title': '極簡設計',
-                'overview.card1.body': '僅有數千行程式碼，相較於 IPsec 的數十萬行，顯著減少了攻擊面和潛在漏洞。',
-                'overview.card2.title': '現代密碼學',
-                'overview.card2.body': '採用 ChaCha20、Poly1305 和 Curve25519 等先進密碼套件，確保頂級安全性。',
-                'overview.card3.title': '無縫漫遊與 NAT 穿透',
-                'overview.card3.body': '基於 UDP，具備出色的 NAT 穿透能力，即使 IP 位址變更也能保持連接穩定。',
-                'overview.card4.title': '原生核心支援',
-                'overview.card4.body': '已原生整合到 Linux 核心中。由於 FortiOS 基於 Linux，原生高效能整合是可行的。',
-                'comparison.title': '互動式 VPN 協議比較',
-                'comparison.subtitle': '點擊下方按鈕，動態比較不同協議在各項指標上的表現。',
-                'comparison.btn1': '效能',
-                'comparison.btn2': '配置複雜度',
-                'comparison.btn3': 'NAT 穿透',
-                'comparison.btn4': '加密強度',
-                'comparison.btn5': '客戶端部署難度',
-                'use_cases.title': '三大核心應用場景',
-                'use_cases.subtitle': '探索 WireGuard 如何在不同網路環境中革新連接。',
-                'use_cases.tab1': '站點到站點',
-                'use_cases.tab2': '站點到客戶端',
-                'use_cases.tab3': '中心輻射型 (OSPF)',
-                'use_cases.site_to_site.title': '站點到站點 (Site-to-Site)',
-                'use_cases.site_to_site.text1': '<strong>傳統方式：</strong>IPsec VPN 部署複雜且難以管理，特別是在動態 IP 或 NAT 環境中。',
-                'use_cases.site_to_site.text2': '<strong>WireGuard 方式：</strong>簡單的靜態金鑰架構實現了輕鬆的站點到站點連接。其卓越的 NAT 穿透能力解決了許多常見的連接障礙。',
-                'use_cases.site_to_site.text3': '<strong>應用場景：</strong>適用於需要快速建立分支機構連接，或在多雲架構中創建 VPC 到 VPC 連接的企業。',
-                'use_cases.site_to_site.topology_title': '拓撲圖',
-                'use_cases.site_to_site.cli_title': '配置範例 (CLI)',
-                'use_cases.site_to_site.cli_fg_a': 'FortiGate A',
-                'use_cases.site_to_site.cli_fg_b': 'FortiGate B',
-                'use_cases.site_to_client.title': '遠端存取 (Site-to-Client)',
-                'use_cases.site_to_client.text1': '<strong>傳統方式：</strong>SSL VPN 需要使用者帳戶、憑證和專有客戶端軟體，增加了管理和支援開銷。',
-                'use_cases.site_to_client.text2': '<strong>WireGuard 方式：</strong>客戶端可透過掃描 QR 碼或匯入配置檔案快速部署，省去了複雜的設定步驟。',
-                'use_cases.site_to_client.text3': '<strong>應用場景：</strong>非常適合遠端工作者、DevOps 工程師和行動使用者。其低功耗特性使其成為行動裝置的絕佳選擇。',
-                'use_cases.site_to_client.topology_title': '拓撲圖',
-                'use_cases.site_to_client.cli_title': '配置範例 (CLI)',
-                'use_cases.site_to_client.cli_fg_hq': 'FortiGate HQ',
-                'use_cases.site_to_client.cli_clients': '遠端客戶端配置',
-                'use_cases.hub_spoke.title': '中心輻射型網路與 OSPF 動態路由',
-                'use_cases.hub_spoke.text1': '<strong>傳統方式：</strong>需要在所有設備上手動配置靜態路由，導致網路難以擴展和維護。',
-                'use_cases.hub_spoke.text2': '<strong>WireGuard 與 OSPF 方式：</strong>自動化路由資訊交換，省去了複雜且耗時的靜態路由配置。這使得網路更具擴展性和彈性。',
-                'use_cases.hub_spoke.text3': '<strong>應用場景：</strong>適用於擁有眾多分公司或分散式網路架構的企業，需要動態且自動化的路由。',
-                'use_cases.hub_spoke.topology_title': '拓撲圖',
-                'use_cases.hub_spoke.cli_title': '配置範例 (CLI)',
-                'use_cases.hub_spoke.cli_fg_hub': 'FortiGate 中心點 (10.0.0.1)',
-                'use_cases.hub_spoke.cli_fg_spoke': 'FortiGate 輻射點 A (10.0.0.2)',
-                'analysis.title': '潛在弱點與解決方案',
-                'analysis.subtitle': '應對潛在挑戰並提出 Fortinet 生態系統內可行的整合方案。',
-                'analysis.weakness1.title': '缺乏使用者名稱/密碼或 MFA 支援',
-                'analysis.weakness1.body': '<strong>解決方案：</strong>與 <strong class="text-sky-500">FortiAuthenticator</strong> 整合，以啟用多因子認證 (MFA) 或其他企業級認證機制。',
-                'analysis.weakness2.title': '僅支援 UDP 傳輸',
-                'analysis.weakness2.body': '<strong>解決方案：</strong>考慮未來支援基於 <strong class="text-sky-500">QUIC</strong> 協議的 WireGuard，以增強其穿透能力。',
-                'analysis.weakness3.title': '日誌記錄不足',
-                'analysis.weakness3.body': '<strong>解決方案：</strong>擴展 FortiOS 中的日誌系統，記錄握手、對等點狀態和流量細節，並與 <strong class="text-sky-500">FortiAnalyzer</strong> 完全整合，以提供全面的可視性與分析。',
-                'analysis.weakness4.title': '合規性考量',
-                'analysis.weakness4.body': '<strong>解決方案：</strong>將 WireGuard 作為可選模組提供，在特定地區或行業中可以禁用，以確保符合 FIPS 等法規。',
-                'recommendation.title': '結論與最終建議',
-                'recommendation.body1': 'WireGuard 結合了高效能、易部署和強大安全性，完美契合現代 IT 環境的需求。將其原生整合到 FortiOS 中，不僅能解決傳統 VPN 的痛點，還將為 Fortinet 在 DevOps、物聯網和中小型企業等快速增長市場中開啟新的商業機會。',
-                'recommendation.body2': '我們強烈建議 Fortinet 優先評估並原生整合 WireGuard。這項投資將顯著提升 FortiGate 的彈性和競爭力，為公司的長期發展注入新動能。',
-                'references.title': '技術參考',
-                'references.link1': 'WireGuard 官方網站',
-                'references.link2': 'Juniper WireGuard 文件',
-                'references.link3': 'MikroTik WireGuard 文件',
-                'references.link4': 'Ubiquiti WireGuard 文件',
-            }
+        // Data for the comparison chart
+        const comparisonData = {
+            performance: [100, 60, 50],
+            configComplexity: [20, 90, 80],
+            natTraversal: [95, 70, 60],
+            encryptionStrength: [98, 95, 90],
+            clientDeployment: [100, 50, 70]
         };
+        const labels = ['WireGuard', 'IPsec', 'SSL VPN'];
+        const colors = ['#0ea5e9', '#3b82f6', '#10b981']; // sky-500, blue-500, emerald-500
 
-        const vpnData = {
-            performance: {
-                labels: ['IPsec', 'SSL VPN', 'WireGuard'],
-                data: [70, 60, 95]
+        // Chart.js configuration
+        const ctx = document.getElementById('vpnComparisonChart').getContext('2d');
+        const vpnChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Performance Score',
+                    data: comparisonData.performance,
+                    backgroundColor: colors,
+                }]
             },
-            configComplexity: {
-                labels: ['IPsec', 'SSL VPN', 'WireGuard'],
-                data: [90, 70, 20]
-            },
-            natTraversal: {
-                labels: ['IPsec', 'SSL VPN', 'WireGuard'],
-                data: [40, 80, 95]
-            },
-            encryptionStrength: {
-                labels: ['IPsec', 'SSL VPN', 'WireGuard'],
-                data: [85, 80, 90]
-            },
-            clientDeployment: {
-                labels: ['IPsec', 'SSL VPN', 'WireGuard'],
-                data: [80, 75, 20]
-            }
-        };
-
-        // Initialize Chart.js
-        let vpnChart;
-        function initChart(metric) {
-            const ctx = document.getElementById('vpnComparisonChart').getContext('2d');
-            if (vpnChart) {
-                vpnChart.destroy();
-            }
-            const chartData = vpnData[metric];
-            vpnChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: chartData.labels,
-                    datasets: [{
-                        label: metric.charAt(0).toUpperCase() + metric.slice(1),
-                        data: chartData.data,
-                        backgroundColor: ['#1e40af', '#4f46e5', '#0ea5e9'],
-                        borderColor: ['#1e40af', '#4f46e5', '#0ea5e9'],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                            max: 100,
-                            ticks: {
-                                color: '#a1a1aa'
-                            },
-                            grid: {
-                                color: '#334155'
-                            }
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        grid: {
+                            color: 'rgba(255, 255, 255, 0.1)'
                         },
-                        x: {
-                            ticks: {
-                                color: '#a1a1aa'
-                            },
-                            grid: {
-                                color: '#334155'
-                            }
+                        ticks: {
+                            color: '#cbd5e1'
                         }
                     },
-                    plugins: {
-                        legend: {
+                    x: {
+                        grid: {
                             display: false
+                        },
+                        ticks: {
+                            color: '#cbd5e1'
                         }
-                    },
-                    animation: {
-                        duration: 1000,
-                        easing: 'easeInOutCubic'
+                    }
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: '#cbd5e1'
+                        }
                     }
                 }
-            });
-        }
+            }
+        });
 
-        // Translation function
-        function setLanguage(lang) {
-            document.querySelectorAll('[data-translate-key]').forEach(element => {
-                const key = element.getAttribute('data-translate-key');
-                const translation = translations[lang][key];
-                if (translation) {
-                    if (element.tagName === 'TITLE') {
-                        element.textContent = translation;
-                    } else if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.placeholder = translation;
-                    } else {
-                        element.innerHTML = translation;
-                    }
-                }
-            });
-            // Update chart labels for current language
-            if (vpnChart) {
-                const metric = document.querySelector('.comparison-btn.bg-sky-500').getAttribute('data-metric');
-                const chartLabels = translations[lang]['comparison.btn1']; // A simple way to get one label for the chart
-                vpnChart.data.datasets[0].label = chartLabels;
+        // Event listener for comparison buttons
+        document.querySelectorAll('.comparison-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const metric = event.target.dataset.metric;
+                const newLabel = event.target.textContent;
+
+                // Update chart data and label
+                vpnChart.data.datasets[0].data = comparisonData[metric];
+                vpnChart.data.datasets[0].label = newLabel + ' Score';
                 vpnChart.update();
-            }
-            // Update the URL hash to reflect the language
-            history.pushState(null, '', `#${lang}`);
-        }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set the default language to English
-            setLanguage('en');
-
-            const languageSwitcher = document.getElementById('language-switcher');
-            languageSwitcher.value = 'en'; // Ensure the dropdown reflects the default
-
-            // Event listener for language switching
-            languageSwitcher.addEventListener('change', (event) => {
-                setLanguage(event.target.value);
-            });
-
-            // Handle URL hash for language on page load
-            const hash = window.location.hash.substring(1);
-            if (hash === 'zh' || hash === 'en') {
-                 languageSwitcher.value = hash;
-                 setLanguage(hash);
-            }
-            
-            // Initial chart load
-            initChart('performance');
-
-            // Event listeners for comparison buttons
-            const comparisonBtns = document.querySelectorAll('.comparison-btn');
-            comparisonBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    comparisonBtns.forEach(b => {
-                        b.classList.remove('bg-sky-500', 'text-white');
-                        b.classList.add('bg-slate-700', 'text-slate-300');
-                    });
-                    btn.classList.remove('bg-slate-700', 'text-slate-300');
-                    btn.classList.add('bg-sky-500', 'text-white');
-                    initChart(btn.getAttribute('data-metric'));
+                // Update button styles
+                document.querySelectorAll('.comparison-btn').forEach(btn => {
+                    btn.classList.remove('bg-sky-500', 'text-white');
+                    btn.classList.add('bg-slate-700', 'text-slate-300');
                 });
-            });
-
-            // Event listeners for tabs
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const tabName = btn.getAttribute('data-tab');
-                    document.querySelectorAll('.tab-content').forEach(content => {
-                        content.style.display = 'none';
-                    });
-                    document.getElementById(tabName).style.display = 'block';
-
-                    tabBtns.forEach(b => {
-                        b.classList.remove('active-tab');
-                        b.classList.add('text-slate-400', 'hover:text-slate-200', 'hover:border-slate-500');
-                    });
-                    btn.classList.add('active-tab');
-                    btn.classList.remove('text-slate-400', 'hover:text-slate-200', 'hover:border-slate-500');
-                });
-            });
-
-            // Event listeners for accordions
-            document.querySelectorAll('.accordion-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    const content = header.nextElementSibling;
-                    const icon = header.querySelector('.accordion-icon');
-                    const isExpanded = content.style.maxHeight !== '0px' && content.style.maxHeight !== '';
-
-                    // Close all other accordions
-                    document.querySelectorAll('.accordion-content').forEach(c => {
-                        c.style.maxHeight = '0px';
-                    });
-                    document.querySelectorAll('.accordion-icon').forEach(i => {
-                        i.textContent = '+';
-                        i.classList.remove('rotate-45');
-                    });
-
-                    // Toggle the clicked one
-                    if (!isExpanded) {
-                        content.style.maxHeight = content.scrollHeight + 'px';
-                        icon.textContent = 'x';
-                        icon.classList.add('rotate-45');
-                    }
-                });
+                event.target.classList.remove('bg-slate-700', 'text-slate-300');
+                event.target.classList.add('bg-sky-500', 'text-white');
             });
         });
 
+        // Event listener for tabs
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const tab = event.target.dataset.tab;
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+
+                // Show the selected tab content
+                document.getElementById(tab).style.display = 'block';
+
+                // Update button styles
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active-tab');
+                    btn.classList.add('text-slate-400', 'hover:text-slate-200', 'hover:border-slate-500');
+                });
+                event.target.classList.add('active-tab');
+                event.target.classList.remove('text-slate-400', 'hover:text-slate-200', 'hover:border-slate-500');
+            });
+        });
+
+        // Event listener for accordions
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.accordion-icon');
+                
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        });
+
+        // Language translation functionality
+        const translations = {
+            en: {
+                "meta.title": "Proposal: Native Integration of WireGuard VPN into FortiGate",
+                "header.title": "FortiGate & WireGuard",
+                "nav.overview": "Overview",
+                "nav.comparison": "Protocol Comparison",
+                "nav.use_cases": "Use Cases",
+                "nav.analysis": "Analysis & Weaknesses",
+                "nav.recommendation": "Conclusion & Recommendation",
+                "nav.references": "References",
+                "summary.title": "Proposal: Native Integration of WireGuard VPN into FortiGate (FortiOS)",
+                "summary.author": "Author: Gemini | Date: August 28, 2025",
+                "summary.body": "This proposal recommends that Fortinet natively integrate the high-performance, modern WireGuard VPN protocol into its FortiGate firewall series. This move will provide modern enterprises with a superior VPN solution, especially in remote work, DevOps, and multi-cloud environments, thereby enhancing FortiOS's competitiveness and market appeal.",
+                "overview.title": "What is WireGuard?",
+                "overview.subtitle": "A next-generation VPN protocol that redefines secure connections.",
+                "overview.card1.title": "Minimalist Design",
+                "overview.card1.body": "With only a few thousand lines of code, it significantly reduces the attack surface and potential vulnerabilities, far fewer than IPsec's hundreds of thousands.",
+                "overview.card2.title": "Modern Cryptography",
+                "overview.card2.body": "Utilizes advanced cryptographic suites like ChaCha20, Poly1305, and Curve25519 to ensure top-tier security.",
+                "overview.card3.title": "Seamless Roaming & NAT Traversal",
+                "overview.card3.body": "Based on UDP, it has excellent NAT traversal capabilities, allowing connections to remain stable even when the IP changes.",
+                "overview.card4.title": "Native Kernel Support",
+                "overview.card4.body": "Already integrated into the Linux kernel. Since FortiOS is Linux-based, a high-performance integration is technically feasible.",
+                "comparison.title": "Interactive VPN Protocol Comparison",
+                "comparison.subtitle": "Click the buttons below to dynamically compare the performance of different protocols across various metrics.",
+                "comparison.btn1": "Performance",
+                "comparison.btn2": "Configuration Complexity",
+                "comparison.btn3": "NAT Traversal",
+                "comparison.btn4": "Encryption Strength",
+                "comparison.btn5": "Client Deployment Difficulty",
+                "use_cases.title": "Three Core Use Cases",
+                "use_cases.subtitle": "Explore how WireGuard can revolutionize connectivity in different network environments.",
+                "use_cases.tab1": "Site-to-Site",
+                "use_cases.tab2": "Site-to-Client",
+                "use_cases.tab3": "Hub-and-Spoke (OSPF)",
+                "use_cases.site_to_site.title": "Site-to-Site",
+                "use_cases.site_to_site.text1": "<strong>Traditional Approach:</strong> IPsec VPNs are complex to deploy and difficult to manage, especially in dynamic IP or NAT environments.",
+                "use_cases.site_to_site.text2": "<strong>WireGuard Approach:</strong> A simple static key architecture allows for easy site-to-site connections. Its superior NAT traversal capability resolves many common connectivity barriers.",
+                "use_cases.site_to_site.text3": "<strong>Application:</strong> Ideal for companies needing to quickly establish branch office connections or create VPC-to-VPC connections in multi-cloud architectures.",
+                "use_cases.site_to_site.topology_title": "Topology",
+                "use_cases.site_to_site.cli_title": "Configuration Example (CLI)",
+                "use_cases.site_to_site.cli_fg_a": "FortiGate A",
+                "use_cases.site_to_site.cli_fg_b": "FortiGate B",
+                "use_cases.site_to_client.title": "Remote Access (Site-to-Client)",
+                "use_cases.site_to_client.text1": "<strong>Traditional Approach:</strong> SSL VPNs require user accounts, certificates, and proprietary client software, increasing management and support overhead.",
+                "use_cases.site_to_client.text2": "<strong>WireGuard Approach:</strong> Clients can be deployed quickly by scanning a QR code or importing a configuration file, eliminating complex setup.",
+                "use_cases.site_to_client.text3": "<strong>Application:</strong> Ideal for remote workers, DevOps engineers, and mobile users. Its low power consumption makes it a perfect choice for mobile devices.",
+                "use_cases.site_to_client.topology_title": "Topology",
+                "use_cases.site_to_client.cli_title": "Configuration Example (CLI)",
+                "use_cases.site_to_client.cli_fg_hq": "FortiGate HQ",
+                "use_cases.site_to_client.cli_clients": "Remote Client Configurations",
+                "use_cases.hub_spoke.title": "Hub-and-Spoke with OSPF Dynamic Routing",
+                "use_cases.hub_spoke.text1": "<strong>Traditional Approach:</strong> Requires manual, static route configuration on all devices, making the network difficult to scale and maintain.",
+                "use_cases.hub_spoke.text2": "<strong>WireGuard with OSPF Approach:</strong> Automates the exchange of routing information, eliminating complex and time-consuming static route configurations. This makes the network more scalable and resilient.",
+                "use_cases.hub_spoke.text3": "<strong>Application:</strong> Ideal for enterprises with multiple branch offices or a dispersed network architecture that requires dynamic and automated routing.",
+                "use_cases.hub_spoke.topology_title": "Topology",
+                "use_cases.hub_spoke.cli_title": "Configuration Example (CLI)",
+                "use_cases.hub_spoke.cli_fg_hub": "FortiGate HUB (10.0.0.1)",
+                "use_cases.hub_spoke.cli_fg_spoke": "FortiGate Spoke A (10.0.0.2)",
+                "analysis.title": "Potential Weaknesses and Solutions",
+                "analysis.subtitle": "Addressing potential challenges and proposing feasible integration solutions within the Fortinet ecosystem.",
+                "analysis.weakness1.title": "Lack of Username/Password or MFA Support",
+                "analysis.weakness1.body": "<strong>Solution:</strong> Integrate with <strong class='text-sky-500'>FortiAuthenticator</strong> to enable multi-factor authentication (MFA) or other enterprise authentication mechanisms.",
+                "analysis.weakness2.title": "UDP-Only Transport",
+                "analysis.weakness2.body": "<strong>Solution:</strong> Consider future support for WireGuard based on the <strong class='text-sky-500'>QUIC</strong> protocol to enhance its traversal capabilities.",
+                "analysis.weakness3.title": "Insufficient Logging",
+                "analysis.weakness3.body": "<strong>Solution:</strong> Extend the logging system in FortiOS to record handshake, peer status, and traffic details, and fully integrate with <strong class='text-sky-500'>FortiAnalyzer</strong> for comprehensive visibility and analysis.",
+                "analysis.weakness4.title": "Compliance Considerations",
+                "analysis.weakness4.body": "<strong>Solution:</strong> Offer WireGuard as an optional module that can be disabled in specific regions or industries to ensure compliance with regulations such as FIPS.",
+                "recommendation.title": "Conclusion and Final Recommendation",
+                "recommendation.body1": "WireGuard combines high performance, ease of deployment, and robust security, perfectly aligning with the needs of modern IT environments. Natively integrating it into FortiOS will not only solve the pain points of traditional VPNs but also open up new business opportunities for Fortinet in fast-growing markets such as DevOps, IoT, and SMBs.",
+                "recommendation.body2": "We strongly recommend that Fortinet prioritize the evaluation and native integration of WireGuard. This investment will significantly enhance FortiGate's flexibility and competitiveness, injecting new momentum into the company's long-term development.",
+                "references.title": "Technical References",
+                "references.link1": "WireGuard Official Website",
+                "references.link2": "Juniper WireGuard Docs",
+                "references.link3": "MikroTik WireGuard Docs",
+                "references.link4": "Ubiquiti UniFi WireGuard Docs",
+                "footer.text": "&copy; 2025 Gemini. All rights reserved."
+            },
+            zh: {
+                "meta.title": "提案：將 WireGuard VPN 原生整合至 FortiGate",
+                "header.title": "FortiGate 與 WireGuard",
+                "nav.overview": "概述",
+                "nav.comparison": "協議比較",
+                "nav.use_cases": "核心應用場景",
+                "nav.analysis": "分析與解決方案",
+                "nav.recommendation": "結論與建議",
+                "nav.references": "技術參考",
+                "summary.title": "提案：將 WireGuard VPN 原生整合至 FortiGate (FortiOS)",
+                "summary.author": "作者：Gemini | 日期：2025年8月28日",
+                "summary.body": "本提案旨在建議 Fortinet 將高效能的現代 WireGuard VPN 協定原生整合至其 FortiGate 防火牆系列中。此舉將為現代企業提供卓越的 VPN 解決方案，特別是在遠距辦公、DevOps 和多雲環境中，從而提升 FortiOS 的競爭力及市場吸引力。",
+                "overview.title": "什麼是 WireGuard？",
+                "overview.subtitle": "重新定義安全連接的下一代 VPN 協定。",
+                "overview.card1.title": "極簡設計",
+                "overview.card1.body": "僅有數千行程式碼，相較於數十萬行的 IPsec 大幅縮小了攻擊面並減少了潛在漏洞。",
+                "overview.card2.title": "現代加密技術",
+                "overview.card2.body": "採用先進的加密套件如 ChaCha20、Poly1305 和 Curve25519，確保頂級的安全性。",
+                "overview.card3.title": "無縫漫遊與 NAT 穿透",
+                "overview.card3.body": "基於 UDP，具備出色的 NAT 穿透能力，即使 IP 位址改變也能保持連線穩定。",
+                "overview.card4.title": "原生核心支援",
+                "overview.card4.body": "已原生整合於 Linux 核心中。由於 FortiOS 基於 Linux，因此高效能的整合技術上可行。",
+                "comparison.title": "VPN 協定互動式比較",
+                "comparison.subtitle": "點擊下方按鈕，動態比較不同協定在各項指標上的表現。",
+                "comparison.btn1": "效能",
+                "comparison.btn2": "組態複雜度",
+                "comparison.btn3": "NAT 穿透能力",
+                "comparison.btn4": "加密強度",
+                "comparison.btn5": "客戶端部署難度",
+                "use_cases.title": "三個核心應用場景",
+                "use_cases.subtitle": "探索 WireGuard 如何在不同網路環境中革新連接性。",
+                "use_cases.tab1": "站對站 (Site-to-Site)",
+                "use_cases.tab2": "站對客戶端 (Site-to-Client)",
+                "use_cases.tab3": "軸輻式架構 (OSPF)",
+                "use_cases.site_to_site.title": "站對站 (Site-to-Site)",
+                "use_cases.site_to_site.text1": "<strong>傳統方式：</strong>IPsec VPN 部署複雜且難以管理，在動態 IP 或 NAT 環境中尤其如此。",
+                "use_cases.site_to_site.text2": "<strong>WireGuard 方式：</strong>簡單的靜態金鑰架構實現輕鬆的站對站連接。其卓越的 NAT 穿透能力解決了許多常見的連線障礙。",
+                "use_cases.site_to_site.text3": "<strong>應用：</strong>適合需要快速建立分支辦公室連接或在多雲架構中創建 VPC-to-VPC 連接的公司。",
+                "use_cases.site_to_site.topology_title": "拓撲圖",
+                "use_cases.site_to_site.cli_title": "組態範例 (CLI)",
+                "use_cases.site_to_site.cli_fg_a": "FortiGate A",
+                "use_cases.site_to_site.cli_fg_b": "FortiGate B",
+                "use_cases.site_to_client.title": "遠端存取 (Site-to-Client)",
+                "use_cases.site_to_client.text1": "<strong>傳統方式：</strong>SSL VPN 需要使用者帳戶、憑證和專屬客戶端軟體，增加了管理和支援負擔。",
+                "use_cases.site_to_client.text2": "<strong>WireGuard 方式：</strong>客戶端可透過掃描 QR Code 或匯入組態檔快速部署，省去複雜的設定。",
+                "use_cases.site_to_client.text3": "<strong>應用：</strong>適合遠距工作者、DevOps 工程師和行動用戶。其低功耗特性使其成為行動裝置的完美選擇。",
+                "use_cases.site_to_client.topology_title": "拓撲圖",
+                "use_cases.site_to_client.cli_title": "組態範例 (CLI)",
+                "use_cases.site_to_client.cli_fg_hq": "總部 FortiGate",
+                "use_cases.site_to_client.cli_clients": "遠端客戶端組態",
+                "use_cases.hub_spoke.title": "採用 OSPF 動態路由的軸輻式架構 (Hub-and-Spoke)",
+                "use_cases.hub_spoke.text1": "<strong>傳統方式：</strong>需要在所有設備上進行手動、靜態路由組態，使網路難以擴展和維護。",
+                "use_cases.hub_spoke.text2": "<strong>WireGuard 結合 OSPF：</strong>自動化路由資訊的交換，省去複雜且耗時的靜態路由設定。這使網路更具擴展性和彈性。",
+                "use_cases.hub_spoke.text3": "<strong>應用：</strong>適合擁有眾多分支辦公室或分散式網路架構的企業，需要動態和自動化的路由。",
+                "use_cases.hub_spoke.topology_title": "拓撲圖",
+                "use_cases.hub_spoke.cli_title": "組態範例 (CLI)",
+                "use_cases.hub_spoke.cli_fg_hub": "總部 FortiGate (10.0.0.1)",
+                "use_cases.hub_spoke.cli_fg_spoke": "分支 FortiGate A (10.0.0.2)",
+                "analysis.title": "潛在弱點與解決方案",
+                "analysis.subtitle": "解決潛在挑戰並提出 Fortinet 生態系統內可行的整合方案。",
+                "analysis.weakness1.title": "缺乏使用者名稱/密碼或 MFA 支援",
+                "analysis.weakness1.body": "<strong>解決方案：</strong>整合 <strong class='text-sky-500'>FortiAuthenticator</strong> 以啟用多因子驗證 (MFA) 或其他企業級驗證機制。",
+                "analysis.weakness2.title": "僅支援 UDP 傳輸",
+                "analysis.weakness2.body": "<strong>解決方案：</strong>考量未來支援基於 <strong class='text-sky-500'>QUIC</strong> 協定的 WireGuard，以提升其穿透能力。",
+                "analysis.weakness3.title": "日誌紀錄不足",
+                "analysis.weakness3.body": "<strong>解決方案：</strong>擴展 FortiOS 中的日誌系統，紀錄交握、對等體狀態和流量詳情，並完全整合至 <strong class='text-sky-500'>FortiAnalyzer</strong> 以進行全面的可視化和分析。",
+                "analysis.weakness4.title": "合規性考量",
+                "analysis.weakness4.body": "<strong>解決方案：</strong>將 WireGuard 作為可選模組提供，以確保在特定地區或行業（如 FIPS）中，可以依照法規要求將其停用。",
+                "recommendation.title": "結論與最終建議",
+                "recommendation.body1": "WireGuard 結合了高效能、易於部署和強大的安全性，完美符合現代 IT 環境的需求。將其原生整合至 FortiOS 中，不僅能解決傳統 VPN 的痛點，更能為 Fortinet 在 DevOps、物聯網和中小型企業等快速成長的市場中開拓新的商機。",
+                "recommendation.body2": "我們強烈建議 Fortinet 優先評估並原生整合 WireGuard。這項投資將顯著提升 FortiGate 的彈性和競爭力，為公司的長期發展注入新的動力。",
+                "references.title": "技術參考",
+                "references.link1": "WireGuard 官方網站",
+                "references.link2": "Juniper WireGuard 文件",
+                "references.link3": "MikroTik WireGuard 文件",
+                "references.link4": "Ubiquiti UniFi WireGuard 文件",
+                "footer.text": "&copy; 2025 Gemini. All rights reserved."
+            }
+        };
+
+        const languageSwitcher = document.getElementById('language-switcher');
+        function updateContent(lang) {
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+        }
+        
+        languageSwitcher.addEventListener('change', (event) => {
+            updateContent(event.target.value);
+        });
+
+        // Initialize content on page load with the default language (English)
+        updateContent('en');
     </script>
 </body>
 </html>
