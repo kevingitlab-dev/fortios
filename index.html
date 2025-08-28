@@ -481,20 +481,20 @@ end</div>
                     </div>
                     <div class="accordion-item bg-slate-800 rounded-lg shadow-lg">
                         <button class="accordion-header w-full flex justify-between items-center p-4 text-left font-semibold text-slate-300" data-translate-key="analysis.weakness3.title">
-                            <span>No Built-in Public Key Management</span>
+                            <span>Insufficient Logging</span>
                              <span class="accordion-icon transform transition-transform duration-200 text-sky-500">+</span>
                         </button>
                         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness3.body"><strong>Solution:</strong> Develop a native FortiOS Public Key Infrastructure (PKI) for automated key distribution and rotation. This would align with existing FortiManager and FortiClient EMS features.</span></p>
+                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness3.body"><strong>Solution:</strong> Extend the logging system within FortiOS to record handshake records, peer status, and traffic details. Integrate this fully with FortiAnalyzer for comprehensive visibility and analysis.</span></p>
                         </div>
                     </div>
                      <div class="accordion-item bg-slate-800 rounded-lg shadow-lg">
                         <button class="accordion-header w-full flex justify-between items-center p-4 text-left font-semibold text-slate-300" data-translate-key="analysis.weakness4.title">
-                            <span>Lack of Official FortiGate Support</span>
+                            <span>Compliance Concerns</span>
                              <span class="accordion-icon transform transition-transform duration-200 text-sky-500">+</span>
                         </button>
                         <div class="accordion-content max-h-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness4.body"><strong>Solution:</strong> Provide a clear product roadmap and dedicated R&D resources for native WireGuard integration, ensuring full feature parity and support with existing FortiOS VPN functionalities.</span></p>
+                            <p class="p-4 pt-0 text-slate-400"><span data-translate-key="analysis.weakness4.body"><strong>Solution:</strong> Offer WireGuard as an optional module that can be disabled to ensure compliance in sensitive environments.</span></p>
                         </div>
                     </div>
                 </div>
@@ -602,10 +602,10 @@ end</div>
                 "analysis.weakness1.body": "<strong>Solution:</strong> Integrate with <strong class='text-sky-500'>FortiAuthenticator</strong> to enable multi-factor authentication (MFA) or other enterprise authentication mechanisms.",
                 "analysis.weakness2.title": "UDP-Only Transport",
                 "analysis.weakness2.body": "<strong>Solution:</strong> Consider future support for WireGuard based on the <strong class='text-sky-500'>QUIC</strong> protocol to enhance its traversal capabilities.",
-                "analysis.weakness3.title": "No Built-in Public Key Management",
-                "analysis.weakness3.body": "<strong>Solution:</strong> Develop a native FortiOS Public Key Infrastructure (PKI) for automated key distribution and rotation. This would align with existing FortiManager and FortiClient EMS features.",
-                "analysis.weakness4.title": "Lack of Official FortiGate Support",
-                "analysis.weakness4.body": "<strong>Solution:</strong> Provide a clear product roadmap and dedicated R&D resources for native WireGuard integration, ensuring full feature parity and support with existing FortiOS VPN functionalities.",
+                "analysis.weakness3.title": "Insufficient Logging",
+                "analysis.weakness3.body": "<strong>Solution:</strong> Extend the logging system within FortiOS to record handshake records, peer status, and traffic details. Integrate this fully with FortiAnalyzer for comprehensive visibility and analysis.",
+                "analysis.weakness4.title": "Compliance Concerns",
+                "analysis.weakness4.body": "<strong>Solution:</strong> Offer WireGuard as an optional module that can be disabled to ensure compliance in sensitive environments.",
                 "recommendation.title": "Conclusion & Recommendation",
                 "recommendation.text1": "The native integration of WireGuard into FortiGate firewalls is not merely a technical upgrade; it is a strategic imperative. By adopting WireGuard, Fortinet can offer a solution that is faster, simpler, and more resilient than legacy VPN protocols.",
                 "recommendation.text2": "This will not only address the growing needs of modern, distributed enterprises but also solidify Fortinet's position as a leader in cybersecurity innovation. The proposed solutions for WireGuard's weaknesses demonstrate that a full-fledged enterprise-grade implementation is not only feasible but also a natural fit within the Fortinet Security Fabric.",
@@ -688,10 +688,10 @@ end</div>
                 "analysis.weakness1.body": "<strong>解決方案：</strong>與 <strong class='text-sky-500'>FortiAuthenticator</strong> 整合，以啟用多因子認證 (MFA) 或其他企業級認證機制。",
                 "analysis.weakness2.title": "僅限 UDP 傳輸",
                 "analysis.weakness2.body": "<strong>解決方案：</strong>考慮未來支援基於 <strong class='text-sky-500'>QUIC</strong> 協定的 WireGuard，以增強其穿越能力。",
-                "analysis.weakness3.title": "無內建公鑰管理機制",
-                "analysis.weakness3.body": "<strong>解決方案：</strong>開發原生的 FortiOS 公鑰基礎設施 (PKI)，用於自動化金鑰分發與輪換。這將與現有的 FortiManager 和 FortiClient EMS 功能保持一致。",
-                "analysis.weakness4.title": "缺乏 FortiGate 官方支援",
-                "analysis.weakness4.body": "<strong>解決方案：</strong>為 WireGuard 原生整合提供明確的產品藍圖和專屬研發資源，確保與現有 FortiOS VPN 功能完全相容並提供支援。",
+                "analysis.weakness3.title": "日誌不足",
+                "analysis.weakness3.body": "<strong>解決方案：</strong>在 FortiOS 中擴展日誌系統，以記錄握手紀錄、對等端狀態以及流量細節，並與 FortiAnalyzer 完整整合，以提供全面的可見性與分析能力。",
+                "analysis.weakness4.title": "合規性顧慮",
+                "analysis.weakness4.body": "<strong>解決方案：</strong>將 WireGuard 提供為可選模組，並允許在敏感環境中停用，以確保合規性。",
                 "recommendation.title": "結論與建議",
                 "recommendation.text1": "將 WireGuard 原生整合至 FortiGate 防火牆不僅僅是一次技術升級；它是一項策略性當務之急。透過採用 WireGuard，Fortinet 可以提供比傳統 VPN 協定更快、更簡單、更具彈性的解決方案。",
                 "recommendation.text2": "這不僅能滿足現代分散式企業日益增長的需求，還能鞏固 Fortinet 在網路安全創新領域的領導地位。針對 WireGuard 弱點所提出的解決方案證明，一個成熟的企業級實施方案不僅可行，也與 Fortinet Security Fabric 自然契合。",
