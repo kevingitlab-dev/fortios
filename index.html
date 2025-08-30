@@ -225,14 +225,14 @@ end</div>
                             </p>
                             <h5 class="font-semibold mt-6 mb-2" data-translate-key="use_cases.site_to_client.topology_title">Topology</h5>
                             <div class="topology mb-4">
-+------------------+       +-----------------+
-|   Headquarters   |       |                 |
-| (FortiGate HQ)   |-------|    Internet     |
-| 192.168.1.0/24   |       |                 |
-+------------------+       +-----------------+
-      |                           /      |      \
-      |                          /       |       \
-      |                         /        |        \
++------------------+                 +-----------------+
+|   Headquarters   |                 |                 |
+| (FortiGate HQ)   |-----------------|    Internet     |
+| 192.168.1.0/24   |                 |                 |
++------------------+                 +-----------------+
+      |                                 /      |      \
+      |                                /       |       \
+      |                               /        |        \
       |                   +------------+ +------------+ +------------+
       |                   | Remote User| | Remote User| | Remote User|
       |                   | (Laptop A) | | (Laptop B) | | (Mobile C) |
